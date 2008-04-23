@@ -43,7 +43,7 @@ function! Vimgen() range
 
   " read data and template
 	while (l:line <= a:lastline)
-		if getline(l:line) =~ '^\s*$'
+		if getline(l:line) =~ '^\s*$' && l:is_data
 			let l:is_data = 0
 		elseif l:is_data
 			call add(l:data_list,getline(l:line))
